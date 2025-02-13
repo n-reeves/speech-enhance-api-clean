@@ -128,7 +128,7 @@ app = FastAPI()
 #required formatting to create endpoint healthcheck  
 @app.get('/ping')
 async def ping():
-    return {"message": "pong 3"}
+    return {"message": "pong 1"}
 
 
 #to invoke the model, need to send data to /invocations
