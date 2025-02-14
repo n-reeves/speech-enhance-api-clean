@@ -1,5 +1,6 @@
 from typing import List
 from fastapi import FastAPI, status, Request
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import torch
 import numpy as np
@@ -124,6 +125,20 @@ def postprocess(output: torch.Tensor, wav_input: torch.Tensor, normalize: bool =
 ### Decorators
 #Reference note: to run server with uvicorn, type in terminal: uvicorn main:app --reload
 app = FastAPI()
+
+origins = [
+    "http://localhost",
+    "http://localhost:4000",
+    "https://n-reeves.github.io/"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 #required formatting to create endpoint healthcheck  
 @app.get('/ping')
