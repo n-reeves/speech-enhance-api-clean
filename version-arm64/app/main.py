@@ -6,7 +6,8 @@ import torch
 import numpy as np
 import os
 import gc
-from app.utils import batch_stft, batch_istft, file_to_batch, batch_to_file, normalize_loudness, stereo_to_mono
+from utils import batch_stft, batch_istft, file_to_batch, batch_to_file, normalize_loudness, stereo_to_mono
+#from app.utils import batch_stft, batch_istft, file_to_batch, batch_to_file, normalize_loudness, stereo_to_mono
 
 MODEL_PATH = "app/data"
 MODEL_NAME = "model.pt"
@@ -131,6 +132,9 @@ origins = [
     "http://localhost:4000",
     "https://n-reeves.github.io/"
 ]
+
+#delete after testing
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
