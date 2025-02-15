@@ -130,7 +130,8 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:4000",
-    "https://n-reeves.github.io/"
+    "https://n-reeves.github.io/",
+    "https://humble-wrongly-bluebird.ngrok-free.app"
 ]
 
 #delete after testing
