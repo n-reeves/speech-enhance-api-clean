@@ -6,7 +6,6 @@ import torch
 import numpy as np
 import os
 import gc
-#from utils import batch_stft, batch_istft, file_to_batch, batch_to_file, normalize_loudness, stereo_to_mono
 from app.utils import batch_stft, batch_istft, file_to_batch, batch_to_file, normalize_loudness, stereo_to_mono
 
 MODEL_PATH = "app/data"
@@ -148,7 +147,7 @@ app.add_middleware(
 #required formatting to create endpoint healthcheck  
 @app.get('/ping')
 async def ping():
-    return {"message": "pong 1"}
+    return {"message": "pong 2"}
 
 
 #to invoke the model, need to send data to /invocations
